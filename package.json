@@ -5,7 +5,7 @@
   "private": true,
   "dependencies": {
     "firebase": "6.0.2",
-    "node-sass": "4.12.0",
+    "node-sass": "4.14.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-redux": "7.0.3",
@@ -23,7 +23,8 @@
     "babel-jest": "24.7.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "prestart": "source $HOME/.nvm/nvm.sh; nvm use v12",
+    "start": "yarn run prestart && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
