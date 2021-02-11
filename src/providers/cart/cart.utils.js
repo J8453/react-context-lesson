@@ -29,3 +29,17 @@ export const removeItemFromCart = (cartItems, cartItemToRemove) => {
       : cartItem
   );
 };
+
+export const clearItemFromCart = (cartItems, cartItemToClear) => {
+  return cartItems.filter(cartItem => cartItem.id !== cartItemToClear.id);
+};
+
+export const getCartItemsCount = (cartItems) => cartItems.reduce(
+  (accumalatedQuantity, cartItem) => accumalatedQuantity + cartItem.quantity,
+  0
+);
+
+export const getCartItemsTotal = (cartItems) => cartItems.reduce(
+  (accumalatedValue, cartItem) => accumalatedValue + cartItem.quantity * cartItem.price,
+  0
+);
